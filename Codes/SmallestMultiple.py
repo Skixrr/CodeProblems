@@ -12,5 +12,14 @@ for i in range(2,Question):
 Ans = 1
 print(Primes)
 for i in Primes:
-    Ans = Ans * i
+    for Power in range(Question,1,-1):
+        if i**Power < Question:
+            Ans = Ans * i**Power
+            break
+
+for i in range(1,Question):
+    if Ans%i != 0:
+        print(i)
+        Ans = Ans * i
+
 print(Ans)
