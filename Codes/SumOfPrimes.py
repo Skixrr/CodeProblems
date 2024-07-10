@@ -1,15 +1,10 @@
-Primes = [2,3]
-Ans = 1
-for i in range(2,2000000):
-    if i%2==0:
-        pass
-    else:
-        for Prime in Primes:
-            if i % Prime == 0:
-                break
-        else:
-            Primes.append(i)
+def sumPrimes(n):
+    sum, sieve = 0, [True] * n
+    for p in range(2, n):
+        if sieve[p]:
+            sum += p
+            for i in range(p*p, n, p):
+                sieve[i] = False
+    return sum
 
-for i in Primes:
-    Ans += i
-print(Ans)
+print(sumPrimes(2000000))
