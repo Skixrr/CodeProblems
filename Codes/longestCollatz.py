@@ -10,5 +10,5 @@ Ans = 0
 for i in range(1,1000000):
     temp = len(Collatz(i))
     if temp > Ans:
-        Ans = temp
+        Ans = i
 print(Ans)
