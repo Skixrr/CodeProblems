@@ -1,14 +1,22 @@
-def Collatz(Start):
-    Sequence = [Start]
-    while Sequence[-1] != 1:
-        if Sequence[-1]%2 == 0:
-            Sequence.append(Sequence[-1]//2)
+my_seq_final = []
+for i in range(1000000, 0, -1):
+    ans = i
+    my_seq = [ans]
+    while ans != 1:
+        n = ans
+        if n % 2 == 0:
+            ans = n/2
         else:
-            Sequence.append((3*Sequence[-1])+1)
-    return Sequence
-Ans = 0
-for i in range(1,1000000):
-    temp = len(Collatz(i))
-    if temp > Ans:
-        Ans = i
-print(Ans)
+            ans = 3*n + 1
+        my_seq.append(ans)
+    my_seq_final.append(my_seq)
+
+tmp = 0
+result = [0]
+for j in my_seq_final[::-1]:
+    if tmp < len(j):
+        tmp = len(j)
+        result[0] = j
+    else:
+        pass
+print(result[0][0])
