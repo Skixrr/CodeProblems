@@ -34,7 +34,6 @@ def Circle(n):
                 string = string[:-1]
             loops -= 1
         if Circular == True:
-            print(n)
             for i in Rotations:
                 Count += 1
                 if n not in Proven:
@@ -45,4 +44,4 @@ for p in range(2, num+1):
     if prime[p]:
         Circle(p)
 
-print(sorted(Proven))
+print(len(Proven))
