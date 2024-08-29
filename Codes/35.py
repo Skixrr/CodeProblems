@@ -39,7 +39,8 @@ def Circle(n):
             print(n)
             for i in Rotations:
                 Count += 1
-                Proven.append(i)
+                if n not in Proven:
+                    Proven.append(i)
 
 # Print all prime numbers
 for p in range(2, num+1):
