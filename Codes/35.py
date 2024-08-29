@@ -12,8 +12,6 @@ while (p**2 <= num):
         for i in range(p**2, num+1, p):
             prime[i] = False
     p += 1
- 
-
 
 def Circle(n):
     global Proven
