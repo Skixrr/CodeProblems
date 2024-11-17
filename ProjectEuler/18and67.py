@@ -45,9 +45,9 @@ def greedyPath(x,y):
         else:
             return greedyPath(x+1,y+1)
     else:
-        if Arr[y+1][x] + Arr[y+2][x] >= Arr[y+1][x+1] + Arr[y+2][x+1] or Arr[y+1][x] + Arr[y+2][x] >= Arr[y+1][x+1] + Arr[y+2][x+2]:
+        if Arr[y+1][x] >= Arr[y+1][x+1] or Arr[y+1][x] >= Arr[y+1][x+1]:
             return greedyPath(x,y+1)
-        elif Arr[y+1][x] + Arr[y+2][x+1] >= Arr[y+1][x+1] + Arr[y+2][x+1] or Arr[y+1][x] + Arr[y+2][x+1] >= Arr[y+1][x+1] + Arr[y+2][x+2]:
+        elif Arr[y+1][x] >= Arr[y+1][x+1] or Arr[y+1][x] >= Arr[y+1][x+1]:
             return greedyPath(x,y+1)
         else:
             return greedyPath(x+1,y+1)
