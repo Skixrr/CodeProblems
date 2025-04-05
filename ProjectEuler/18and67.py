@@ -20,7 +20,10 @@ pyramid = []
 with open('triangle.csv',"r") as triangle:
     triangle = csv.reader(triangle,delimiter=' ')
     for row in triangle:
-        pyramid.append(row)
+        temp = []
+        for i in row:
+            temp.append(int(i))
+        pyramid.append(temp)
 
 def collapse(y):
     for i in range(0,len(pyramid[y])):
